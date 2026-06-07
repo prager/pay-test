@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'Mdarc';
 $route['welcome'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
@@ -62,5 +62,7 @@ $route['mdarc-post']['post'] = "mdarc/stripePost";
 
 $route['about'] = 'Mdarc/about';
 $route['terms'] = 'Mdarc/terms';
+
+$route['send-email'] = "EmailController/send_email";
 
 $route['paym_ok'] = 'Mdarc/paym_ok';

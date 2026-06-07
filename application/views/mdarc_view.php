@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>MDARC Payments</title>
+    <title>MDARC Payments-test</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="<?php echo base_url() ;?>/assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -11,14 +11,17 @@
 <ol class="breadcrumb text-center">
   <li class="active"><a href="<?php echo base_url(); ?>index.php/mdarc">Home</a></li>
   <li><a href="https://www.mdarc.org" target="_blank">MDARC</a></li>
-  <li><a href="https://mdarc.jlkconsulting.info">Member Portal</a></li>
+  <li><a href="https://mdarc-dev.jlkconsulting.info">Member Portal</a></li>
   <li><a href="<?php echo base_url();?>index.php/about" target="_blank">About</a></li>
 </ol>
 <div class="container">
 
 	<div class="row">
 		<div class="col text-center">
-			<h1>MDARC Payments</h1>            
+			<h1>MDARC Payments</h1>  
+			<?php if (ENVIRONMENT === 'development') { ?>
+				<small style="color: red;">Test Mode</small>
+			<?php } ?>
 		</div>
 	</div>
 	

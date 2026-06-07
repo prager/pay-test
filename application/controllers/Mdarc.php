@@ -44,6 +44,13 @@ class Mdarc extends CI_Controller {
 		$this->load->view('terms');
 	}
 
+	public function send_email() {
+
+		//$this->load->library('email');
+		//$this->Manager_model->send_email('blank_text');
+		$this->load->view('email_sent_view.php');
+	}
+
 	public function paym_ok() {
 
 		// $param['email'] = $emailPost;

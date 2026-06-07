@@ -113,9 +113,9 @@ class Manager_model extends CI_Model {
                 //echo 'don in model - in if: ' . $don_paid . '<br>';
                 $dbdata = array(
                     'id_member' => $mem_arr['id_members'],
-                    'id_payaction' => 5,
+                    'id_payaction' => 7,
                     'id_entity' => 2,
-                    'amount' => $don_paid,
+                    'amount' => $don_rep_paid,
                     'paydate' => time(),
                     'result' => 'success',
                     'val_string' => $valstr,
@@ -135,9 +135,9 @@ class Manager_model extends CI_Model {
                 //echo 'don rep:' . $don_rep_paid;
                 $dbdata = array(
                     'id_member' => $mem_arr['id_members'],
-                    'id_payaction' => 7,
+                    'id_payaction' => 5, //changed
                     'id_entity' => 2,
-                    'amount' => $don_rep_paid,
+                    'amount' => $don_paid,
                     'paydate' => time(),
                     'result' => 'success',
                     'val_string' => $valstr,
@@ -148,9 +148,10 @@ class Manager_model extends CI_Model {
                 $this->db->insert('mem_payments', $dbdata);
             }
 
+            $email['to'] = array('jkulisek.us@gmail.com');
             //$email['to'] = array('jkulisek.us@gmail.com', 'mdarc-memberships@arrleb.org');
-			$email['to'] = array('bwhysong@gmail.com', 'mdarc-memberships@arrleb.org');
-			$email['subject'] = 'MDARC Payment ' . $mem_arr['fname'] . ' ' . $mem_arr['lname'];
+			//$email['to'] = array('bwhysong@gmail.com', 'mdarc-memberships@arrleb.org');
+			$email['subject'] = 'MDARC Payment from: ' . $mem_arr['fname'] . ' ' . $mem_arr['lname'];
 			$email['message'] = '<h2>Payment to Stripe Account Completed</h2>
 								<p>Payment date: '. date('F j, Y, g:i a', $time_stamp) . '<br>
 								Payment for MDARC member: ' .  $mem_arr['fname'] . " ". $mem_arr['lname'] . '<br>
